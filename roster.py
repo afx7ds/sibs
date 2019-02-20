@@ -1,7 +1,6 @@
 import pandas as pd
 import random
 
-
 # import roster csv
 df = pd.DataFrame.from_csv("roster.csv")
 
@@ -38,12 +37,19 @@ def pair(dictionary):
 
 	    # delete the second random name
 	    del dictionary[pair_name]
-	    
+
 	return pairings
+
+def read(dictionary):
+	# functions that prints out pairings in an easier to read way
+	for i in dictionary:
+		print(i, ": ", dictionary[i], "\n")
 
 def main():
 	pairs = pair(dictionary.copy())
-	print(pairs)
+	read(pairs)
 
 if __name__ == '__main__':
 	main()
+
+
